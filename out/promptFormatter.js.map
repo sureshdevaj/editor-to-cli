@@ -1,0 +1,1 @@
+{"version":3,"file":"promptFormatter.js","sourceRoot":"","sources":["../src/promptFormatter.ts"],"names":[],"mappings":";;AAUA,oCAGC;AAXD;;;;;;;GAOG;AACH,SAAgB,YAAY,CAAC,GAAqB;IAChD,MAAM,EAAE,YAAY,EAAE,SAAS,EAAE,OAAO,EAAE,GAAG,GAAG,CAAC;IACjD,OAAO,GAAG,YAAY,KAAK,SAAS,IAAI,OAAO,EAAE,CAAC;AACpD,CAAC"}

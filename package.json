@@ -1,0 +1,87 @@
+{
+  "name": "editor-to-cli",
+  "displayName": "Editor to CLI",
+  "description": "Attach selected code to AI CLI tools like Claude directly from VS Code.",
+  "version": "0.0.1",
+  "publisher": "Sureshdeva",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "ai",
+    "cli",
+    "claude",
+    "code assistant",
+    "terminal",
+    "clipboard"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sureshdeva/editor-to-cli"
+  },
+  "activationEvents": [
+    "onCommand:editorToCli.attachSelection"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "editorToCli.attachSelection",
+        "title": "Editor to CLI: Attach Selection"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "editorToCli.attachSelection",
+        "key": "ctrl+shift+.",
+        "mac": "cmd+shift+.",
+        "when": "editorTextFocus && editorHasSelection"
+      }
+    ],
+    "configuration": {
+      "title": "Editor to CLI",
+      "properties": {
+        "editorToCli.transport": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "terminal",
+            "clipboard"
+          ],
+          "enumDescriptions": [
+            "Auto-detect: inject into matching terminal, otherwise copy to clipboard",
+            "Always send prompt to the active VS Code terminal",
+            "Always copy prompt to clipboard"
+          ],
+          "default": "auto",
+          "description": "How to send prompt to AI CLI"
+        },
+        "editorToCli.terminalMatch": {
+          "type": "string",
+          "default": "claude",
+          "description": "Match terminal name to inject prompt (case-insensitive)"
+        },
+        "editorToCli.autoEnter": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically press Enter after sending"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,34 @@
+# Source TypeScript files (compiled output in /out is included)
+src/**
+
+# TypeScript config
+tsconfig.json
+.eslintrc*
+.eslintignore
+
+# Build / dev tooling
+node_modules/**
+.vscode-test/**
+
+# Git metadata
+.git/**
+.gitignore
+.gitattributes
+
+# Package manager lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Editor configs
+.editorconfig
+.prettierrc*
+
+# Test artifacts
+out/test/**
+**/*.test.js
+**/*.spec.js
+
+# Misc
+*.map
+**/.DS_Store
