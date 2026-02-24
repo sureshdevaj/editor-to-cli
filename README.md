@@ -1,6 +1,8 @@
-# Code to CLI
+# Editor to CLI
 
 Attach selected code to AI CLI tools like Claude directly from VS Code — via terminal injection or clipboard — without leaving your editor.
+
+**Repository:** [https://github.com/sureshdevaj/editor-to-cli](https://github.com/sureshdevaj/editor-to-cli)
 
 ---
 
@@ -47,35 +49,21 @@ The extension will format your selection and deliver it to the configured destin
 
 ## Configuration
 
-Open **Settings** (`Cmd+,` / `Ctrl+,`) and search for **Code to CLI**, or edit your `settings.json` directly:
+Open **Settings** (`Cmd+,` / `Ctrl+,`) and search for **Editor to CLI**, or edit your `settings.json` directly:
 
 ```json
 {
-  "codeToCli.transport": "auto",
-  "codeToCli.terminalMatch": "claude",
-  "codeToCli.autoEnter": false
+  "editorToCli.transport": "auto",
+  "editorToCli.terminalMatch": "claude",
+  "editorToCli.autoEnter": false
 }
 ```
 
 | Setting | Type | Default | Description |
 |---|---|---|---|
-| `codeToCli.transport` | `"auto"` \| `"terminal"` \| `"clipboard"` | `"auto"` | How to deliver the prompt |
-| `codeToCli.terminalMatch` | `string` | `"claude"` | Substring matched (case-insensitive) against terminal names in `auto` mode |
-| `codeToCli.autoEnter` | `boolean` | `false` | Press Enter automatically after injecting into the terminal |
-
----
-
-## Adding an Icon
-
-To display an icon on the VS Code Marketplace:
-
-1. Create a `128x128` PNG image
-2. Save it as `images/icon.png` in the extension root
-3. Ensure `package.json` contains:
-
-```json
-"icon": "images/icon.png"
-```
+| `editorToCli.transport` | `"auto"` \| `"terminal"` \| `"clipboard"` | `"auto"` | How to deliver the prompt |
+| `editorToCli.terminalMatch` | `string` | `"claude"` | Substring matched (case-insensitive) against terminal names in `auto` mode |
+| `editorToCli.autoEnter` | `boolean` | `false` | Press Enter automatically after injecting into the terminal |
 
 ---
 
